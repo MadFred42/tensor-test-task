@@ -1,0 +1,12 @@
+.description {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+}
+
+.description-light {
+    color: #999999;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0;
+}

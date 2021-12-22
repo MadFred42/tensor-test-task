@@ -1,0 +1,17 @@
+.styling__module_header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.styling__module_header-text {
+    margin: .65em 12px;
+    font-weight: 600;
+}
+
+.styling__module_header-description {
+    color: #999999;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0 12px;
+}
