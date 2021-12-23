@@ -1,8 +1,9 @@
 import { observer } from 'mobx-react-lite';
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Context } from '..';
 import CogComponent from '../components/cogComponent';
 import StylingComponent from '../components/stylingComponent';
+import SectionsEdditor from '../components/stylingComponent/sectionEdditor';
 
 import './mainPage.css';
 
@@ -10,9 +11,11 @@ const MainPage = observer(() => {
     const mainStore = useContext(Context);
 
     return (
-       !mainStore.isClicked ?
-       <CogComponent /> :
-       <StylingComponent />
+        !mainStore.isClicked && !mainStore.isChosenSection ?
+        <CogComponent /> :
+        mainStore.isClicked && !mainStore.isChosenSection ?
+        <StylingComponent /> :
+        <SectionsEdditor />
     );
 });
 

@@ -1,15 +1,12 @@
-interface Icolor {
-    color: string
-}
-
-export interface Iinfo {
-    label: string,
-    description: string;
-    colors: Array<Icolor>;
+export interface Color {
+    color: string,
+    description: string,
+    title: string
 };
 
-export interface IcolorBlocks {
-    type: string;
+export interface Sections {
+    description: string;
+    colors: Array<Color>;
     label: string;
-    info: Array<Iinfo>;
+    title: string;
 };

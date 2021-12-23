@@ -1,12 +1,20 @@
 .styling__module_header {
+    background: white;
+    margin: 0;
+}
+    
+.styling__module_header-body {
     align-items: center;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+    margin: 0;
+    padding: .65em 12px .65em 12px;
 }
 
 .styling__module_header-text {
-    margin: .65em 12px;
     font-weight: 600;
+    margin: 0;
 }
 
 .styling__module_header-description {

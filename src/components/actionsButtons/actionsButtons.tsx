@@ -1,17 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import closeTag from '../../svgs/close_tag.svg';
 import checkTag from '../../svgs/check_tag.svg';
 
 import './actionsButtons.css';
-import { Context } from '../..';
 
+interface ActionsButtonsProps {
+    onActionCloseClickHandler: () => void;
+}
 
-function ActionsButtons() {
-    const mainStore = useContext(Context);
+const ActionsButtons = ({ onActionCloseClickHandler }: ActionsButtonsProps) => {
 
-    const onClickHandler = () => {
-        mainStore.isClickedHandler(false);
-    }
+    
 
     return (
         <div className='actions'>
@@ -20,7 +19,7 @@ function ActionsButtons() {
             </button>
             <button 
                 className='actions__close_button'
-                onClick={onClickHandler}
+                onClick={onActionCloseClickHandler}
             >
                 <img alt='close tag' src={closeTag} className='actions__close_tag'></img>
             </button>

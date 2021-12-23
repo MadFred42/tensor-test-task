@@ -1,12 +1,4 @@
-.back_tag {
-    align-self: center;
-    cursor: pointer;
-    height: 16px;
-    margin: 0 6px 0 0;
-    width: 15px
-}
-
-.styling__module {
+.sections__edditor {
     background-color: white;
     border-radius: 6px;
     box-shadow: 0 2px 8px rgba(15, 15, 15, .15);
@@ -19,8 +11,6 @@
     transform: translate(-50%, -50%) 
 }
 
-.styling__module_underline {
-    border-bottom: 1px solid #EAEAEA;
-    margin: 12px auto;
-    width: 95%;
+.sections__edditor-block {
+    margin: 12.5px 0;
 }
