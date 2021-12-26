@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Color } from '../../../../types/types';
 import switchesTag from '../../../../svgs/switches_tag.svg';
 import ColorPicker from '../../colorPicker';
 import StylingHeader from '../../stylingHeader';
+import { Context } from '../../../..';
 
 import './sectionsEdditorItems.css';
 
@@ -12,6 +13,8 @@ interface SectionsEdditorItemsProps {
 
 const SectionsEdditorItems = ({ color }: SectionsEdditorItemsProps) => {
     const [isPicker, setIsPicker] = useState(false);
+    const [newColor, setNewColor] = useState<string>(color.color);
+    const colorEdditorStore = useContext(Context); 
 
     const onClickPickerHandler = () => {
         setIsPicker(true);
@@ -19,6 +22,11 @@ const SectionsEdditorItems = ({ color }: SectionsEdditorItemsProps) => {
     
     const onActionCloseClickHandler = () => {
         setIsPicker(false);
+    };
+
+    const onActionApplyClickHandler = () => {
+        setIsPicker(false);
+        colorEdditorStore.chosenSectionChangeColor(color.title, newColor);
     };
     
     const onBackTagClickHandler = () => {
@@ -41,15 +49,18 @@ const SectionsEdditorItems = ({ color }: SectionsEdditorItemsProps) => {
                 <img alt='switches tag' className='switches__tag' src={switchesTag} />
             </div>
             { isPicker && 
-            <div className='sections__edditor_picker'>
-                <StylingHeader 
-                    onActionCloseClickHandler={onActionCloseClickHandler} 
-                    onBackTagClickHandler={onBackTagClickHandler} 
-                    title='Выбор цвета' />
-                <ColorPicker initialColor={color.color} key={color.description} />
+            <div className='sections__edditor_picker-background'>
+                <div className='sections__edditor_picker'>
+                    <StylingHeader 
+                        onActionApplyClickHandler={onActionApplyClickHandler}
+                        onActionCloseClickHandler={onActionCloseClickHandler} 
+                        onBackTagClickHandler={onBackTagClickHandler} 
+                        title='Выбор цвета' />
+                    <ColorPicker color={newColor} setNewColor={setNewColor} />
+                </div>
             </div> }
         </div>
     );
-}
+};
 
 export default SectionsEdditorItems;

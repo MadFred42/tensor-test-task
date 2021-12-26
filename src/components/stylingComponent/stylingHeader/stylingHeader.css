@@ -9,17 +9,20 @@
     display: flex;
     justify-content: space-between;
     margin: 0;
-    padding: .65em 12px .65em 12px;
+    padding: 12.5px 12px 0 12px;
 }
 
 .styling__module_header-text {
+    align-self: center;
+    font-style: normal;
     font-weight: 600;
     margin: 0;
+    position: static;
 }
 
 .styling__module_header-description {
     color: #999999;
-    font-size: 12px;
+    font-size: 11px;
     line-height: 15px;
-    margin: 0 12px;
+    margin: 8.5px 12px;
 }

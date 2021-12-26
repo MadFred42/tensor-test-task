@@ -3,8 +3,7 @@
     border: thin solid transparent;
     cursor: pointer;
     display: flex;
-    height: 47px;
-    position: relative;
+    height: 45px; 
 }
 
 .sections__edditor-module:hover {
@@ -18,11 +17,20 @@
 
 .sections__edditor_picker {
     box-shadow: 0 2px 8px rgba(15, 15, 15, .15);
-    font-size: .8em;
+    font-size: 15px;
     position: absolute;
     right: 0;
+    top: 12%;
     width: 200px;
-    z-index: 1;
+    z-index: 10000;
+}
+
+.sections__edditor_picker-background {
+    height: 1000%;
+    position: absolute;
+    top: -100%;
+    width: 100%;
+    z-index: 100;
 }
 
 .switches__tag {

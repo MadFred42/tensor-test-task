@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { HexColorPicker } from 'react-colorful';
 
 import './colorPicker.css';
 
 interface ColorPickerProps {
-    initialColor: string;
+    color: string;
+    setNewColor: (color: string) => void;
 }
 
-const ColorPicker = ({ initialColor }: ColorPickerProps) => {
-    const [color, setColor] = useState<string>(initialColor);
+const ColorPicker = ({ color, setNewColor }: ColorPickerProps) => {
 
     return (
-        <HexColorPicker className='color__picker' color={color} onChange={setColor} />
+        <HexColorPicker className='color__picker' color={color} onChange={setNewColor} />
     );
 }
 

@@ -1,3 +1,12 @@
 .styling__module_body {
     box-sizing: border-box;
+    margin: 16px 0;
+}
+
+.styling__module_body-additional {
+    margin: 16px 0;
+}
+
+.styling__module_body-main {
+    margin: 8px 0 12px;
 }

@@ -7,27 +7,37 @@ import { Context } from '../../..';
 import './stylingHeader.css';
 
 interface StylingHeaderProps {
-    title: string;
+    onActionApplyClickHandler: () => void;
     onActionCloseClickHandler: () => void;
     onBackTagClickHandler: () => void;
+    title: string;
 }
 
-const StylingHeader = observer(({ onActionCloseClickHandler, onBackTagClickHandler, title }: StylingHeaderProps) => {
-    const mainStore = useContext(Context);
-    const isChosenSection = mainStore.isChosenSection;
+const StylingHeader = observer(({
+    onActionApplyClickHandler, 
+    onActionCloseClickHandler, 
+    onBackTagClickHandler, 
+    title
+}: StylingHeaderProps) => {
+
+    const colorEdditorStore = useContext(Context);
+    const isChosenSection = colorEdditorStore.isChosenSection;
     
     return (
         <div className='styling__module_header'>
             <div className='styling__module_header-body'>
-                <div style={{ display: 'flex' }}>
-                    { isChosenSection && <img 
+                <div style={{ display: 'flex', height: '23px' }}>
+                    { isChosenSection && 
+                    <img 
                         alt='back tag' 
                         className='back_tag' 
                         onClick={onBackTagClickHandler}
                         src={backTag} /> }
-                    <h3 className='styling__module_header-text'>{title}</h3>
+                    <p className='styling__module_header-text'>{title}</p>
                 </div>
-                <ActionsButtons onActionCloseClickHandler={onActionCloseClickHandler} />
+                <ActionsButtons 
+                    onActionApplyClickHandler={onActionApplyClickHandler}
+                    onActionCloseClickHandler={onActionCloseClickHandler} />
             </div>
             { !isChosenSection && <p className='styling__module_header-description'>Здесь вы можете настроить цвета сайта</p> }
             { !isChosenSection && <div className='styling__module_underline'></div> }

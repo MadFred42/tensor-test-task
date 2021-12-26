@@ -8,5 +8,6 @@ export interface Sections {
     description: string;
     colors: Array<Color>;
     label: string;
+    section: string;
     title: string;
 };

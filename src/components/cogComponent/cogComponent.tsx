@@ -1,20 +1,23 @@
 import React, { useContext } from 'react';
 import { Context } from '../..';
+import cogIcon from '../../svgs/cog_icon.svg';
 
 import './cogComponent.css';
 
 function CogComponent() {
-    const mainStore = useContext(Context);
+    const colorEdditroStore = useContext(Context);
 
     const onClickHandler = () => {
-        mainStore.isClickedHandler(true);
+        colorEdditroStore.isClickedHandler(true);
     };
 
     return ( 
         <div className='cog__main'>
-            <i 
-                className="cog__main-item fas fa-cog"
-                onClick={onClickHandler} />
+            <img
+                alt='cog icon' 
+                className="cog__main-item"
+                onClick={onClickHandler}
+                src={cogIcon} />
         </div>
     )
 };

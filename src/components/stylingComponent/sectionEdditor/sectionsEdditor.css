@@ -12,5 +12,11 @@
 }
 
 .sections__edditor-block {
-    margin: 12.5px 0;
+    height: 47px;
+    margin: 0 auto;
+    width: 288px;
+}
+
+.section__edditor_header {
+    margin: 0 0 12.5px;
 }

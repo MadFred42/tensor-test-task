@@ -2,15 +2,15 @@ import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import MainStore from './stores/mainStore';
+import ColorEdditroStore from './stores/colorEdditorStore';
 import ErrorBoundry from './components/error-boundry/error-boundry';
 
-const mainStore = new MainStore();
-export const Context = createContext(mainStore);
+const colorEdditorStore = new ColorEdditroStore();
+export const Context = createContext(colorEdditorStore);
 
 ReactDOM.render(
   <ErrorBoundry>
-    <Context.Provider value={mainStore}>
+    <Context.Provider value={colorEdditorStore}>
       <App />
     </Context.Provider>
   </ErrorBoundry>,

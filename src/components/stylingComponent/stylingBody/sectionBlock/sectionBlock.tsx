@@ -10,12 +10,12 @@ interface ColorBlockProps {
     label: string,
 };
 
-function SectionBlock({description, label}: ColorBlockProps) {
-    const mainStore = useContext(Context);
-    const colors = mainStore.sections.find((section: Sections) => section.label === label);
-    
+function SectionBlock({ description, label }: ColorBlockProps) {
+    const colorEdditorStore = useContext(Context);
+    const initialColors = colorEdditorStore.sections.find((section: Sections) => section.label === label);
+
     const onClickHandler = (event: React.MouseEvent) => {
-        mainStore.chosenSectionHandler((event.target as HTMLElement).id);
+        colorEdditorStore.chosenSectionHandler((event.target as HTMLElement).id);
     };
     
     return (
@@ -26,7 +26,7 @@ function SectionBlock({description, label}: ColorBlockProps) {
                 onClick={onClickHandler}
             >
                 <div className='styling__module_body-colors' id={label}>
-                    {colors && colors.colors.map(color => 
+                    {initialColors && initialColors.colors.map(color => 
                         (<div id={label} key={color.title} style={{backgroundColor: `${color.color}`}} />)
                     )}
                 </div>

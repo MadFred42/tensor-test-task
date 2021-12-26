@@ -5,16 +5,18 @@ import checkTag from '../../svgs/check_tag.svg';
 import './actionsButtons.css';
 
 interface ActionsButtonsProps {
+    onActionApplyClickHandler: () => void;
     onActionCloseClickHandler: () => void;
 }
 
-const ActionsButtons = ({ onActionCloseClickHandler }: ActionsButtonsProps) => {
-
-    
+const ActionsButtons = ({ onActionApplyClickHandler, onActionCloseClickHandler }: ActionsButtonsProps) => {
 
     return (
         <div className='actions'>
-            <button className='actions__check-button'>
+            <button 
+                className='actions__check-button'
+                onClick={onActionApplyClickHandler}
+            >
                 <img alt='check tag' src={checkTag} className='actions__check_tag' />
             </button>
             <button 

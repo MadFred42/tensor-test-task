@@ -1,16 +1,16 @@
 .next_tag {
     align-self: center;
-    height: 15px;
-    margin-right: 10px;
-    width: 20px;
+    height: 13px;
+    width: 24px;
 }
 
 .styling__module_body-block {
-    align-content: center;
     border: thin solid transparent;
     cursor: pointer;
     display: flex;
-    height: 47px;
+    height: 45px;
+    margin: 0 auto;
+    width: 288px;
 }
 
 .styling__module_body-block:hover {
@@ -24,21 +24,21 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    height: 32px;
-    margin: auto 6px auto 12px;
+    height: 30px;
+    margin: auto 6px auto 6px;
     overflow: hidden;
-    width: 32px;
+    width: 30px;
 }
 
 .styling__module_body-description {
     align-self: center;
     display: block;
     height: 35px;
-    width: 75%;
+    width: 214px;
 }
 
 .styling__module_body-text {
-    margin: .65em 12px;
+    margin: 16px 12px 8px;
     font-weight: 600;
     font-size: 12px;
     line-height: 15px;
